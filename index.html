@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>py-tips-n-tricks</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<meta name="description"
+		content="Python best practices, tips, tricks, recommendations and general programming practices">
+	<meta name="author" content="Ivan Prytula">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<section class="intro">
+					<h3><code>py-tips-n-tricks</code></h3>
+					<p>
+						Python best practices, tips, tricks, recommendations and general programming practices
+					</p>
+
+					<br />
+					<br />
+					<br />
+					<br />
+
+					<p>Also check <a href="https://ivanprytula.github.io/nerds-jargon-jungle">nerds-jargon-jungle</a>
+						slides</p>
+
+					<hr>
+					<small>Made with <a href="https://revealjs.com/">reveal.js</a></small>
+				</section>
+
+				<section>
+					<h3>Note</h3>
+
+					<ul class="r-fit-text">
+						<li>Hold down the <strong>alt</strong> key (<strong>ctrl</strong> in Linux) and click on any
+							element to zoom towards it.
+							Click again to zoom back out.
+						</li>
+						<li>Press <strong>Shift + ← / →</strong> Jump to first/last slide</li>
+						<li>Press <strong>CTRL + Shift + F</strong> Search on all slides. Found words/phrases will be
+							highlighted. Press Enter to jump between slides with found words/phrases.</li>
+						<li>
+							<em>At any time press `Shift+?` to see the help overlay with keyboard shortcuts</em>
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>One virtual environment per project</h3>
+				</section>
+				<section>Isolation. You don't want to mess up the system Python</section>
+				<section>Different projects have different dependency versions</section>
+			</section>
+			<section>
+				<section>
+					<h3>Structure your code and projects</h3>
+				</section>
+				<section>Package and module structure gives an overview about the project</section>
+				<section>Modular design == better re-usability</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Utilize the capabilities of your editor</h3>
+				</section>
+				<section>Efficient and fluent development</section>
+				<section>There's plenty of tools to make your daily programming easier, why would you not use them
+				</section>
+			</section>
+
+			<section>
+				<h3>5 Tips To Achieve Low Coupling In Your Python Code</h3>
+				<a href="https://www.youtube.com/watch?v=qR4-PBLUZNw">source YT video</a>
+				<ol>
+					<li>Avoid deep inheritance relationships</li>
+					<li>Separate creating resources from using them</li>
+					<li>Introduce abstractions</li>
+					<li>Avoid inappropriate intimacy</li>
+					<li>Introduce an intermediate data structure</li>
+				</ol>
+			</section>
+
+			<section>
+				<section>
+					<h3>Testing</h3>
+				</section>
+				<section>If it can break, it should be tested. This includes models, views, forms, templates,
+					validators, and so forth</section>
+				<section>Each test should generally only test one function</section>
+				<section>Keep it simple. You do not want to have to write tests on top of other tests</section>
+				<section>Run tests whenever code is PULLed or PUSHed from the repo and in the staging environment before
+					PUSHing to production</section>
+				<section>
+					<h4>When upgrading to a newer version of library or web framework</h4>
+
+					<ul>
+						<li>upgrade locally</li>
+						<li>run your test suite</li>
+						<li>fix bugs</li>
+						<li>PUSH to the repo and staging, and then</li>
+						<li>test again in staging before shipping the code</li>
+					</ul>
+
+				</section>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+						## Demo 1
+                        Slide 1
+                        ---
+                        ## Demo 1
+                        Slide 2
+                        ---
+                        ## Demo 1
+						- Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+                        - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+                    </script>
+			</section>
+
+
+			<!-- Slides are separated by regexp matching newline + three dashes + newline, vertical slides identical but two dashes -->
+			<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+				<script type="text/template">
+                        ## Demo 2
+                        Slide 1.1
+
+                        --
+
+                        ## Demo 2
+                        Slide 1.2
+
+                        ---
+
+                        ## Demo 2
+                        Slide 2
+                    </script>
+			</section>
+
+			<!-- Images -->
+			<section data-markdown>
+				<script type="text/template">
+						![Python](python-logo_light_bg.png)
+					</script>
+			</section>
+
+			<!-- <section data-background="python-logo_light_bg.png">
+					...
+				</section> -->
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: true,
+			mouseWheel: true,
+			transitionSpeed: "fast",
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealZoom, RevealSearch]
+		});
+	</script>
+</body>
+
+</html>
